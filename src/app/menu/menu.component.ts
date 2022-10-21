@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { lenguajes } from '../enums/lenguajes.enum';
-
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-menu',
@@ -8,16 +9,18 @@ import { lenguajes } from '../enums/lenguajes.enum';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  dataSource : DataSource ;
+  dataSource : lenguajes[] ;
+  
+  MatTableDataSource = lenguajes[name]
+  
   displayedColumns = [
-    
 
   ]
 
   constructor(
     public lenguajesEnum : lenguajes 
   ) {
-      this.dataSource = new this.DataSource({});
+
    }
 
   ngOnInit(): void {
